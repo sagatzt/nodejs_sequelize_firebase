@@ -1,7 +1,15 @@
 //https://sequelize.org/v4/manual/installation/usage.html
 
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('mysql://sequelize:1234@localhost:3306/sequelize')
+const db={
+    host:process.env.DB_HOST,
+    port:process.env.DB_PORT,
+    name:process.env.DB_NAME,
+    user:process.env.DB_USER,
+    pass:process.env.DB_PASS,
+    dial:process.env.DB_DIAL
+}
+const sequelize = new Sequelize(`mysql://${db.user}:${db.pass}@${db.host}:${db.port}/${db.name}`)
 
 const db={}
 db.Sequelize=Sequelize
