@@ -11,7 +11,7 @@ const db={
 }
 const sequelize = new Sequelize(`mysql://${db.user}:${db.pass}@${db.host}:${db.port}/${db.name}`)
 
-const db={}
+
 db.Sequelize=Sequelize
 db.sequelize=sequelize
 
